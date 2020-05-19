@@ -16,15 +16,16 @@
 
 */
 import React, { Component } from "react";
-import { Grid, Row, Col, Alert } from "react-bootstrap";
+import { Container, Row, Col, Alert } from "react-bootstrap";
 
 import Button from "components/CustomButton/CustomButton.jsx";
+import { style } from 'variables/Variables.jsx';
 
 class Notifications extends Component {
   render() {
     return (
       <div className="content">
-        <Grid fluid>
+        <Container fluid>
           <div className="card">
             <div className="header">
               <h4 className="title">Notifications</h4>
@@ -51,16 +52,16 @@ class Notifications extends Component {
               <Row>
                 <Col md={6}>
                   <h5>Notifications Style</h5>
-                  <Alert bsStyle="info">
+                  <Alert variant="info">
                     <span>This is a plain notification</span>
                   </Alert>
-                  <Alert bsStyle="info">
+                  <Alert variant="info">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
                     <span>This is a notification with close button.</span>
                   </Alert>
-                  <Alert bsStyle="info" className="alert-with-icon">
+                  <Alert variant="info" className="alert-with-icon">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -69,7 +70,7 @@ class Notifications extends Component {
                       This is a notification with close button and icon.
                     </span>
                   </Alert>
-                  <Alert bsStyle="info" className="alert-with-icon">
+                  <Alert variant="info" className="alert-with-icon">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -84,7 +85,7 @@ class Notifications extends Component {
                 </Col>
                 <Col md={6}>
                   <h5>Notification states</h5>
-                  <Alert bsStyle="info">
+                  <Alert variant="info">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -93,7 +94,7 @@ class Notifications extends Component {
                       bsStyle="info"
                     </span>
                   </Alert>
-                  <Alert bsStyle="success">
+                  <Alert variant="success">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -102,7 +103,7 @@ class Notifications extends Component {
                       with bsStyle="success"
                     </span>
                   </Alert>
-                  <Alert bsStyle="warning">
+                  <Alert variant="warning">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -111,7 +112,7 @@ class Notifications extends Component {
                       with bsStyle="warning"
                     </span>
                   </Alert>
-                  <Alert bsStyle="danger">
+                  <Alert variant="danger">
                     <button type="button" aria-hidden="true" className="close">
                       &#x2715;
                     </button>
@@ -126,7 +127,7 @@ class Notifications extends Component {
               <br />
               <div className="places-buttons">
                 <Row>
-                  <Col md={6} mdOffset={3} className="text-center">
+                  <Col  md={{span: 4, offset: 4}}  className="text-center">
                     <h5>
                       Notifications Places
                       <p className="category">Click to view notifications</p>
@@ -134,9 +135,10 @@ class Notifications extends Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={2} mdOffset={3}>
+                  <Col  md={{span: 2, offset: 3}}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("tl")}
                     >
@@ -145,7 +147,8 @@ class Notifications extends Component {
                   </Col>
                   <Col md={2}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("tc")}
                     >
@@ -154,7 +157,8 @@ class Notifications extends Component {
                   </Col>
                   <Col md={2}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("tr")}
                     >
@@ -163,9 +167,10 @@ class Notifications extends Component {
                   </Col>
                 </Row>
                 <Row>
-                  <Col md={2} mdOffset={3}>
+                  <Col md={{span: 2, offset: 3}} mdOffset={3}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("bl")}
                     >
@@ -174,7 +179,8 @@ class Notifications extends Component {
                   </Col>
                   <Col md={2}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("bc")}
                     >
@@ -183,7 +189,8 @@ class Notifications extends Component {
                   </Col>
                   <Col md={2}>
                     <Button
-                      bsStyle="default"
+                      variant="outline-secondary"
+style={style.directionButtonTextSize}
                       block
                       onClick={() => this.props.handleClick("br")}
                     >
@@ -194,7 +201,7 @@ class Notifications extends Component {
               </div>
             </div>
           </div>
-        </Grid>
+        </Container>
       </div>
     );
   }

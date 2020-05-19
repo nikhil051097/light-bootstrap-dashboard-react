@@ -258,6 +258,22 @@ var style = {
       margin: 0,
       padding: 0
     }
+  },
+
+  navbarBrand:{
+    color: '#48484'
+  },
+  
+  directionButtonTextSize: {
+    fontSize: 14
+  },
+
+  toggleButton: {
+    color: '#777',
+    float: 'right',
+    position: 'absolute',
+    right: 10
+    
   }
 };
 

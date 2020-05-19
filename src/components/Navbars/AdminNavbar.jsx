@@ -19,6 +19,7 @@ import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
 
 import AdminNavbarLinks from "./AdminNavbarLinks.jsx";
+import { style } from 'variables/Variables.jsx';
 
 class Header extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class Header extends Component {
     document.documentElement.classList.toggle("nav-open");
     var node = document.createElement("div");
     node.id = "bodyClick";
-    node.onclick = function() {
+    node.onclick = function () {
       this.parentElement.removeChild(this);
       document.documentElement.classList.toggle("nav-open");
     };
@@ -46,14 +47,11 @@ class Header extends Component {
   }
   render() {
     return (
-      <Navbar fluid>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#pablo">{this.props.brandText}</a>
-          </Navbar.Brand>
-          <Navbar.Toggle onClick={this.mobileSidebarToggle} />
-        </Navbar.Header>
-        <Navbar.Collapse>
+      <Navbar variant='light' style={{background: '#fff', height: 60, paddingLeft:  0}}>
+        <Navbar.Brand href="#pablo" style={{color: '#777'}}>{this.props.brandText}</Navbar.Brand>
+        <Navbar.Toggle onClick={this.mobileSidebarToggle} aria-controls="basic-navbar-nav"/>
+          {/* <i  style={style.toggleButton} onClick={this.mobileSidebarToggle} className="pe-7s-menu lg"></i> */}
+        <Navbar.Collapse id="basic-navbar-nav">
           <AdminNavbarLinks />
         </Navbar.Collapse>
       </Navbar>

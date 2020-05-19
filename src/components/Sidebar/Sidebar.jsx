@@ -84,14 +84,15 @@ class Sidebar extends Component {
                         : this.activeRoute(prop.layout + prop.path)
                     }
                     key={key}
+                    style={{color: 'white', verticalAlign: 'middle', width: '100%'}}
                   >
                     <NavLink
                       to={prop.layout + prop.path}
                       className="nav-link"
                       activeClassName="active"
                     >
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
+                      <i style={{ verticalAlign: 'middle'}} className={prop.icon} />
+                      <p style={{display: 'inline'}}>{prop.name}</p>
                     </NavLink>
                   </li>
                 );
